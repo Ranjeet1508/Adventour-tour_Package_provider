@@ -1,0 +1,51 @@
+.light{
+    color: black;
+    background-color: white;
+    margin: auto;
+    height: 700px;
+    padding-top: 50px;
+}
+
+.dark{
+    color: white;
+    background-color: black;
+    margin: auto;
+    height: 700px;
+    padding-top: 50px;
+}
+
+.card{
+    border-radius: 20px;
+    background-color: rgb(71, 60, 99);
+    width: 50%;
+    height: 70%;
+    margin: auto;
+    padding: 30px;
+    padding-top: 50px;
+}
+
+.heading{
+    margin: auto;
+    display: flex;
+    align-items: center; 
+}
+
+.heading > *{
+    margin: auto;
+}
+
+.title{
+    padding-left: 240px;
+}
+
+.iconButton{
+    margin-left: 220px;
+}
+
+.label{
+    padding-top: 35px;
+}
+
+.button{
+    margin-top: 45px;
+}

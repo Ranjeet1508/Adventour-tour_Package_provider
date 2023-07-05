@@ -1,0 +1,59 @@
+.SignUpLight{
+    color : #101214;
+    background-color: white ;
+    margin: auto;
+    height: 700px;
+    padding: 50px;
+}
+
+.SignUpDark{
+    color : white;
+    background-color: #101214;
+    margin: auto;
+    height: 700px;
+    padding: 50px;
+}
+
+.signUpCard{
+    background-color: rgb(65, 74, 91);
+    border-radius: 20px;
+    margin: auto;
+    width: 55%;
+    height: 95%;
+    padding: 40px;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+}
+
+.heading>*{
+    margin: auto;
+}
+
+.title{
+    margin-left: 220px;
+}
+
+.iconButton{
+    margin-left : 210px;
+} 
+
+.form{
+    margin: auto;
+    padding: 10px;
+    padding-top: 40px;
+}
+
+.input{
+    margin-top: 10px;
+} 
+
+.checkbox{
+    margin-top: 30px;
+}
+
+.button{
+    margin-top: 50px;
+}
