@@ -14,59 +14,60 @@ import { useSelector } from 'react-redux';
 function Payment() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const theme = true
-  // const storedata = useSelector(state => state.detail)   //use this if i am  not there while merging
+  const storedata = useSelector(state => state.detail)   
+  //use this if i am  not there while merging
   //and remove the below storedata object
-  const storedata = {
-    "id": 1,
-    "region": "Asia",
-    "category": "Explorer",
-    "title": "Glimpse Of Indochina In 15 Days - Vietnam / Cambodia / Thailand / Laos",
-    "reviews": 45,
-    "destinations": [
-      "Vietnam",
-      "Cambodia",
-      "Thailand",
-      "Laos"
-    ],
-    "age_range": "1 to 90",
-    "travel_style": [
-      "Family",
-      "Custom",
-      "Private",
-      "Group",
-      "Explorer"
-    ],
-    "tour_length": 15,
-    "price_per_day": 8988,
-    "str_price": 299609,
-    "act_price": 134824,
-    "save_price": 164785,
-    "addional_price": 43948,
-    "off": 55,
-    "main_image": "https://cdn.tourradar.com/s3/tour/1500x800/136848_62bd70bf2dc19.jpg",
-    "rating": 5,
-    "tour_id": 136848,
-    "group_size": 15,
-    "top_crousel_img": [
-      "https://cdn.tourradar.com/s3/tour/1500x800/136848_62bd70bf2dc19.jpg",
-      "https://cdn.tourradar.com/s3/tour/1500x800/136848_6b312b7a.jpg",
-      "https://cdn.tourradar.com/s3/tour/1500x800/136848_1f8e9977.jpg",
-      "https://cdn.tourradar.com/s3/tour/1500x800/136848_82b37e84.jpg"
-    ],
-    "places_see_img": [
-      "https://cdn.tourradar.com/s3/cities/520x406/7592_792610.jpg",
-      "https://cdn.tourradar.com/s3/cities/520x406/30189_fda1a8.jpg",
-      "https://cdn.tourradar.com/s3/cities/520x406/7628_1a1229.jpg",
-      "https://cdn.tourradar.com/s3/cities/520x406/11324_9c04eb.jpg"
-    ],
-    "places_see_name": [
-      "Hanoi",
-      "Halong Bay",
-      "Ho Chi Minh City",
-      "Bangkok"
-    ],
-    "map_img": "https://cdn.tourradar.com/s3/map/1171x320/136848_ea02.png"
-  }
+  // const storedata = {
+  //   "id": 1,
+  //   "region": "Asia",
+  //   "category": "Explorer",
+  //   "title": "Glimpse Of Indochina In 15 Days - Vietnam / Cambodia / Thailand / Laos",
+  //   "reviews": 45,
+  //   "destinations": [
+  //     "Vietnam",
+  //     "Cambodia",
+  //     "Thailand",
+  //     "Laos"
+  //   ],
+  //   "age_range": "1 to 90",
+  //   "travel_style": [
+  //     "Family",
+  //     "Custom",
+  //     "Private",
+  //     "Group",
+  //     "Explorer"
+  //   ],
+  //   "tour_length": 15,
+  //   "price_per_day": 8988,
+  //   "str_price": 299609,
+  //   "act_price": 134824,
+  //   "save_price": 164785,
+  //   "addional_price": 43948,
+  //   "off": 55,
+  //   "main_image": "https://cdn.tourradar.com/s3/tour/1500x800/136848_62bd70bf2dc19.jpg",
+  //   "rating": 5,
+  //   "tour_id": 136848,
+  //   "group_size": 15,
+  //   "top_crousel_img": [
+  //     "https://cdn.tourradar.com/s3/tour/1500x800/136848_62bd70bf2dc19.jpg",
+  //     "https://cdn.tourradar.com/s3/tour/1500x800/136848_6b312b7a.jpg",
+  //     "https://cdn.tourradar.com/s3/tour/1500x800/136848_1f8e9977.jpg",
+  //     "https://cdn.tourradar.com/s3/tour/1500x800/136848_82b37e84.jpg"
+  //   ],
+  //   "places_see_img": [
+  //     "https://cdn.tourradar.com/s3/cities/520x406/7592_792610.jpg",
+  //     "https://cdn.tourradar.com/s3/cities/520x406/30189_fda1a8.jpg",
+  //     "https://cdn.tourradar.com/s3/cities/520x406/7628_1a1229.jpg",
+  //     "https://cdn.tourradar.com/s3/cities/520x406/11324_9c04eb.jpg"
+  //   ],
+  //   "places_see_name": [
+  //     "Hanoi",
+  //     "Halong Bay",
+  //     "Ho Chi Minh City",
+  //     "Bangkok"
+  //   ],
+  //   "map_img": "https://cdn.tourradar.com/s3/map/1171x320/136848_ea02.png"
+  // }
 
   const [start, setstart] = useState('');
   const [end, setend] = useState('');
