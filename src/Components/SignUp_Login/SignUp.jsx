@@ -14,7 +14,7 @@ import {
     Button,
     useToast
 } from '@chakra-ui/react';
-import { SunIcon, MoonIcon } from '@chakra-ui/icons';
+import { SunIcon, MoonIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import style from './SignUp.module.css';
 
 
@@ -22,6 +22,7 @@ const SignUp = () => {
     const dispatch = useDispatch();
     const [theme, setTheme] = useState('dark');
     const [flag, setFlag] = useState(true);
+    const [visiblility, setVisibility] = useState(false);
 
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
@@ -52,14 +53,18 @@ const SignUp = () => {
         }
     }
 
+    const handleView = () => {
+        setVisibility(!visiblility);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (password === confirmPassword && password !== '' && confirmPassword !== '') {
 
             const user = {
-                fullName : fullName,
-                email : email,
-                password : password
+                fullName: fullName,
+                email: email,
+                password: password
             }
 
             console.log(user);
@@ -81,7 +86,7 @@ const SignUp = () => {
                     </Box>
                 ),
             })
-            setTimeout(()=>{
+            setTimeout(() => {
                 navigate('/login');
             }, 2000)
 
@@ -130,10 +135,17 @@ const SignUp = () => {
                             }} />
 
                         {/* <FormLabel className={style.label}>Password</FormLabel> */}
-                        <Input className={style.input} size='lg' variant='flushed' type='password' placeholder='Enter Password' value={password}
-                            onChange={(e) => {
-                                setPassword(e.target.value)
-                            }} />
+                        <div className={style.password}>
+                            <Input className={style.input} size='lg' variant='flushed' type={visiblility ? 'text' : 'password'} placeholder='Enter Password' value={password}
+                                onChange={(e) => {
+                                    setPassword(e.target.value)
+                                }} />
+                            <IconButton
+                                colorScheme='black'
+                                aria-label='Search database'
+                                onClick={handleView}
+                                icon={visiblility ? <ViewIcon /> : <ViewOffIcon />} />
+                        </div>
 
                         {/* <FormLabel className={style.label}>Confirm Password</FormLabel> */}
                         <Input className={style.input} size='lg' variant='flushed' type='password' name="password" placeholder='Confirm Password' value={confirmPassword}

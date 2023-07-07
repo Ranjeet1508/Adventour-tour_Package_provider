@@ -59,6 +59,7 @@
 
     .input {
         margin-top: 10px;
+        width: 90%;
     }
 
     .checkbox {
@@ -69,9 +70,25 @@
         margin-top: 50px;
     }
 
+    .password {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .password > input{
+        margin-right: -40px;
+    }
+
+    /* #password{
+        position: absolute;
+    }
+    .eyecon{
+        position: relative;
+    } */
+
 }
 
-@media all and (min-width : 850px) and (max-width : 1200px){
+@media all and (min-width : 850px) and (max-width : 1200px) {
 
     .SignUpLight {
         color: #101214;
@@ -143,6 +160,15 @@
         margin-top: 50px;
     }
 
+    .password {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .password > input{
+        margin-right: -40px;
+    }
+
 }
 
 @media all and (min-width : 320px) and (max-width : 850px) {
@@ -191,7 +217,7 @@
         margin: auto;
     }
 
-   /*  .title {
+    /*  .title {
         margin-left: 220px;
     }
 
@@ -217,5 +243,12 @@
         margin-top: 50px;
     }
 
+    .password {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .password > input{
+        margin-right: -40px;
+    }
 }
-
