@@ -9,9 +9,9 @@ const signupReducer = (state = initState, {type, payload}) => {
         case types.ADD_USER : {
             return {...state, allUsers : [...state.allUsers, payload]}
         }
-        /* case types.FETCH_USER : {
-            return state;
-        } */
+        case types.SET_USER : {
+            return {...state, allUsers : payload}
+        }
         default : {
             return state
         }

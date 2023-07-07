@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { handleAdd } from '../../Redux/SignUpRedux/signupAction';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import {
     Box,
     FormControl,
@@ -55,7 +56,16 @@ const SignUp = () => {
         if (pw.p1 === pw.p2 && pw.p1 !== '' && pw.p2 !== '') {
             /* setEqual(true); */
             setUser({ ...user, password: pw.p1 });
-            dispatch(handleAdd(user));
+
+            axios.post(`http://localhost:8080/allUsers`, user)
+                .then((res) => {
+                    console.log(res);
+                    dispatch(handleAdd(user));
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+
             toast({
                 position: 'bottom-left',
                 render: () => (

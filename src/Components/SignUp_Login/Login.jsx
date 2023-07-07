@@ -1,7 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+/* import { useSelector } from 'react-redux'; */
 import {
     FormControl,
     FormLabel,
@@ -14,6 +15,8 @@ import {
 } from '@chakra-ui/react';
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import style from './Login.module.css';
+import axios from 'axios';
+import { handleSetUsers } from '../../Redux/SignUpRedux/signupAction';
 
 const Login = () => {
     const [user, setUser] = useState({
@@ -22,12 +25,15 @@ const Login = () => {
     })
     const [err, setErr] = useState(false);
     const [theme, setTheme] = useState('light');
-    const navigate = useNavigate();
-    const toast = useToast()
+    const [allUsers, setAllUsers] = useState([]);
 
-    const allUsers = useSelector((store)=>{
+    const navigate = useNavigate();
+    const toast = useToast();
+    const dispatch = useDispatch();
+
+    /* const allUsers = useSelector((store)=>{
         return store.allUsers
-    })
+    }) */
     /* const allUsers = [
         {
             email : 'anannyasaikia1998@gmail.com',
@@ -86,6 +92,18 @@ const Login = () => {
               })
         }
     }
+
+    useEffect(()=>{
+        axios.get(`http://localhost:8080/allUsers`)
+        .then((res)=>{
+            console.log(res.data);
+            setAllUsers(res.data);
+            dispatch(handleSetUsers(res.data));
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }, [])
 
     return (
         <div className={theme === 'light' ? style.light : style.dark}>
