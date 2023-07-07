@@ -12,8 +12,6 @@ import {
     Input,
     Heading,
     Button,
-    FormHelperText,
-    FormErrorMessage,
     useToast
 } from '@chakra-ui/react';
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
@@ -25,19 +23,24 @@ const SignUp = () => {
     const [theme, setTheme] = useState('dark');
     const [flag, setFlag] = useState(true);
 
-    const [user, setUser] = useState({
+    const [fullName, setFullName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+    /* const [user, setUser] = useState({
         fullName: "",
         email: "",
         password: ""
-    })
+    }) */
 
-    const [pw, setPw] = useState({
+    /* const [pw, setPw] = useState({
         p1: "",
         p2: ""
-    })
+    }) */
 
     /* const [isEqual, setEqual] = useState(false); */
-    const isError = user.password === ''
+
     const toast = useToast();
     const navigate = useNavigate();
 
@@ -50,12 +53,16 @@ const SignUp = () => {
     }
 
     const handleSubmit = (e) => {
-        console.log(user);
-        console.log(pw);
         e.preventDefault();
-        if (pw.p1 === pw.p2 && pw.p1 !== '' && pw.p2 !== '') {
-            /* setEqual(true); */
-            setUser({ ...user, password: pw.p1 });
+        if (password === confirmPassword && password !== '' && confirmPassword !== '') {
+
+            const user = {
+                fullName : fullName,
+                email : email,
+                password : password
+            }
+
+            console.log(user);
 
             axios.post(`http://localhost:8080/allUsers`, user)
                 .then((res) => {
@@ -74,9 +81,11 @@ const SignUp = () => {
                     </Box>
                 ),
             })
-            navigate('/login');
+            setTimeout(()=>{
+                navigate('/login');
+            }, 2000)
 
-        } else if (pw.p1 === '' || pw.p2 === '') {
+        } else if (password === '' || confirmPassword === '') {
             /*  setEqual(false); */
             toast({
                 title: `password cannot be empty string`,
@@ -95,7 +104,7 @@ const SignUp = () => {
     }
     return (
         <div className={theme === 'light' ? style.SignUpLight : style.SignUpDark}>
-            <div className={style.signUpCard}>
+            <div className={theme === 'light' ? style.signUpLightCard : style.signUpDarkCard}>
                 <div className={style.heading}>
                     <Heading className={style.title}>Sign Up</Heading>
                     <IconButton className={style.iconButton}
@@ -109,36 +118,29 @@ const SignUp = () => {
                 <form className={style.form} onSubmit={handleSubmit}>
                     <FormControl>
                         {/* <FormLabel className={style.label}>Full Name</FormLabel> */}
-                        <Input className={style.input} size='lg' variant='flushed' type='text' name='fullName' placeholder='Enter Full Name'
+                        <Input className={style.input} size='lg' variant='flushed' type='text' name='fullName' placeholder='Enter Full Name' value={fullName}
                             onChange={(e) => {
-                                setUser({ ...user, [e.target.name]: e.target.value })
+                                setFullName(e.target.value)
                             }} />
 
                         {/* <FormLabel className={style.label}>Email address</FormLabel> */}
-                        <Input className={style.input} size='lg' variant='flushed' type='email' name="email" placeholder='Enter Email Address'
+                        <Input className={style.input} size='lg' variant='flushed' type='email' name="email" placeholder='Enter Email Address' value={email}
                             onChange={(e) => {
-                                setUser({ ...user, [e.target.name]: e.target.value })
+                                setEmail(e.target.value)
                             }} />
 
                         {/* <FormLabel className={style.label}>Password</FormLabel> */}
-                        <Input className={style.input} size='lg' variant='flushed' type='password' placeholder='Enter Password'
+                        <Input className={style.input} size='lg' variant='flushed' type='password' placeholder='Enter Password' value={password}
                             onChange={(e) => {
-                                setPw({ ...pw, p1: e.target.value })
+                                setPassword(e.target.value)
                             }} />
 
                         {/* <FormLabel className={style.label}>Confirm Password</FormLabel> */}
-                        <Input className={style.input} size='lg' variant='flushed' type='password' name="password" placeholder='Confirm Password'
+                        <Input className={style.input} size='lg' variant='flushed' type='password' name="password" placeholder='Confirm Password' value={confirmPassword}
                             onChange={(e) => {
-                                setPw({ ...pw, p2: e.target.value })
+                                setConfirmPassword(e.target.value)
                             }} />
                         {/* <FormHelperText>Password must be atleast 7 characters</FormHelperText> */}
-                        {!isError ? (
-                            <FormHelperText>
-                                Enter the email you'd like to receive the newsletter on.
-                            </FormHelperText>
-                        ) : (
-                            <FormErrorMessage>Email is required.</FormErrorMessage>
-                        )}
                         <Checkbox className={style.checkbox} size='md' colorScheme='blue' onChange={(e) => {
                             e.target.checked ? setFlag(false) : setFlag(true)
                         }}>
@@ -146,7 +148,7 @@ const SignUp = () => {
                         </Checkbox>
 
                     </FormControl>
-                    <Button className={style.button} isDisabled={flag} type='submit'>
+                    <Button className={style.button} isDisabled={flag} padding={"25px"} type='submit' colorScheme='blue'>
                         Register
                     </Button>
                 </form>

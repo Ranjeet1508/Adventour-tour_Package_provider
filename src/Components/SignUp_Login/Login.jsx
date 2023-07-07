@@ -24,7 +24,7 @@ const Login = () => {
         password: ""
     })
     const [err, setErr] = useState(false);
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
     const [allUsers, setAllUsers] = useState([]);
 
     const navigate = useNavigate();
@@ -103,11 +103,11 @@ const Login = () => {
         .catch((err)=>{
             console.log(err);
         })
-    }, [])
+    }, [dispatch, allUsers])
 
     return (
         <div className={theme === 'light' ? style.light : style.dark}>
-            <div className={style.card}>
+            <div className={theme === 'light' ? style.lightcard : style.darkcard}>
                 <form onSubmit={handleSubmit}>
                     <div className={style.heading}>
                         <Heading className={style.title}>Log In</Heading>
@@ -120,7 +120,7 @@ const Login = () => {
                     </div>
                     <FormControl>
                         <FormLabel className={style.label}><Heading size='md'>Email address</Heading></FormLabel>
-                        <Input type='email' variant='flushed' onChange={(e) => {
+                        <Input type='email' variant='flushed' placeholder="example@example.com" onChange={(e) => {
                             setUser({ ...user, email: e.target.value })
                         }} required/>
                         {
@@ -130,17 +130,17 @@ const Login = () => {
                         }
 
                         <FormLabel className={style.label}><Heading size='md'>Password</Heading></FormLabel>
-                        <Input type='password' variant='flushed' onChange={(e) => {
+                        <Input type='password' variant='flushed' placeholder='********' onChange={(e) => {
                             setUser({ ...user, password: e.target.value })
                         }} required/>
 
-                        <Button className={style.button} type="submit">
+                        <Button className={style.button} type="submit" colorScheme='blue'>
                             Submit
                         </Button>
                     </FormControl>
 
-                    <div>
-                        <p>Do not have an account?</p><Link to='/signup' style={{color : "blue"}}>Register here</Link>
+                    <div className={style.foot}>
+                        <p>Do not have an account?</p><Link to='/signup' style={{color : theme === 'light' ? "blue" : "lightblue"}}>Register here</Link>
                     </div>
                 </form>
             </div>
