@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import {
     Box,
@@ -35,7 +36,7 @@ import {
 const TourList = () => {
     const [tourList, settourList] = useState([]);
     const [sliderValue, setSliderValue] = useState(5)
-    const location = 'Asia';
+    const {location} = useParams();
     const [value,setValue] = useState('');
     const [sortVal,setSortVal]= useState('');
 
