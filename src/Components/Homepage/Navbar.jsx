@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Box, Image, Heading, Flex, Button, Text, useDisclosure, Icon, Popover, PopoverTrigger, PopoverContent, PopoverBody } from '@chakra-ui/react'
 import { NavLink } from 'react-router-dom'
 import logo from './Images/logo.png'
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import {
     Drawer,
     DrawerBody,
@@ -33,11 +34,14 @@ function Navbar(props) {
     return (
         <Box p={{ base: '0 1.5rem', md: '0 3rem', lg: '0 4.5rem' }} color={theme ? 'darkgray' : 'blackAlpha.800'} bg={theme ? '#101214' : 'white'} justify='space-between'>
             <Flex p='1.2rem 0' align='center'>
+            <Link to={'/'}>
                 <Flex>
+                    
                     <Image src={logo} w='7%' />
                     <Heading fontSize="1.2rem" ml='1rem' color={theme ? 'white' : 'blackAlpha.800'}>Adventour.</Heading>
+                    
                 </Flex>
-
+                </Link>
                 <Box display={{ base: 'none', md: 'none', lg: 'block' }}>
                     <Flex gap={10} align='center' flexDirection='row' >
                         <NavLink to={'/'}
