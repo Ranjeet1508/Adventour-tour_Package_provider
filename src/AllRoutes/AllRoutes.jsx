@@ -1,17 +1,26 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import SignUp from '../Components/SignUp_Login/SignUp'
-import Login from '../Components/SignUp_Login/Login'
+import Thankyou from '../Components/Payment/Thankyou'
+import Payment from '../Components/Payment/Payment'
+import Home from '../Components/Homepage/Home'
 
 
 function AllRoutes() {
   return (
-    <Routes>
-      {/* <Route path='/' element={<Home/>}/> */}
-      <Route path='/signup' element={<SignUp/>} />
-      <Route path='/login' element={<Login/>} />
-      <Route />
-    </Routes>
+    <div>
+<Routes>
+
+    <Route path='/' element={<Home/>}/>
+    {/* <Route path='/tourdetail/:location/:id' element={<Tourdetail/>}/> */}
+    {/* <Route path='/signup' element={<Signup/>}/> */}
+    <Route path='/payment/:location/:id' element={<Payment/>}/>
+    {/* <Route path='/tourlist/:location' element={<Tourlist/>}/>
+    <Route path='/login' element={<Login/>}/> */}
+    {/* <Route path='/services' element={<Services />} /> */}
+    <Route path='/payment-successful' element={<Thankyou/>}/>
+  
+ </Routes>
+    </div>
   )
 }
 
