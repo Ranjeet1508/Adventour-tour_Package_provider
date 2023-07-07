@@ -1,0 +1,254 @@
+@media all and (min-width : 1200px) {
+
+    .SignUpLight {
+        color: #101214;
+        background-color: white;
+        margin: auto;
+        height: 700px;
+        padding: 50px;
+    }
+
+    .SignUpDark {
+        color: white;
+        background-color: black;
+        margin: auto;
+        height: 700px;
+        padding: 50px;
+    }
+
+    .signUpLightCard {
+        background-color: lightblue;
+        border-radius: 20px;
+        margin: auto;
+        width: 55%;
+        height: 95%;
+        padding: 40px;
+    }
+
+    .signUpDarkCard {
+        background-color: #2D3748;
+        border-radius: 20px;
+        margin: auto;
+        width: 55%;
+        height: 95%;
+        padding: 40px;
+    }
+
+    .heading {
+        display: flex;
+        align-items: center;
+    }
+
+    .heading>* {
+        margin: auto;
+    }
+
+    .title {
+        margin-left: 220px;
+    }
+
+    .iconButton {
+        margin-left: 210px;
+    }
+
+    .form {
+        margin: auto;
+        padding: 10px;
+        padding-top: 40px;
+    }
+
+    .input {
+        margin-top: 10px;
+        width: 90%;
+    }
+
+    .checkbox {
+        margin-top: 30px;
+    }
+
+    .button {
+        margin-top: 50px;
+    }
+
+    .password {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .password > input{
+        margin-right: -40px;
+    }
+
+    /* #password{
+        position: absolute;
+    }
+    .eyecon{
+        position: relative;
+    } */
+
+}
+
+@media all and (min-width : 850px) and (max-width : 1200px) {
+
+    .SignUpLight {
+        color: #101214;
+        background-color: white;
+        margin: auto;
+        height: 700px;
+        padding: 50px;
+    }
+
+    .SignUpDark {
+        color: white;
+        background-color: black;
+        margin: auto;
+        height: 700px;
+        padding: 50px;
+    }
+
+    .signUpLightCard {
+        background-color: lightblue;
+        border-radius: 20px;
+        margin: auto;
+        width: 55%;
+        height: 95%;
+        padding: 40px;
+    }
+
+    .signUpDarkCard {
+        background-color: #2D3748;
+        border-radius: 20px;
+        margin: auto;
+        width: 55%;
+        height: 95%;
+        padding: 40px;
+    }
+
+    .heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .heading>* {
+        margin: auto;
+    }
+
+    /* .title {
+        margin-left: 220px;
+    }
+
+    .iconButton {
+        margin-left: 210px;
+    } */
+
+    .form {
+        margin: auto;
+        padding: 10px;
+        padding-top: 40px;
+    }
+
+    .input {
+        margin-top: 10px;
+    }
+
+    .checkbox {
+        margin-top: 30px;
+    }
+
+    .button {
+        margin-top: 50px;
+    }
+
+    .password {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .password > input{
+        margin-right: -40px;
+    }
+
+}
+
+@media all and (min-width : 320px) and (max-width : 850px) {
+
+    .SignUpLight {
+        color: #101214;
+        background-color: white;
+        margin: auto;
+        height: 700px;
+        padding: 50px;
+    }
+
+    .SignUpDark {
+        color: white;
+        background-color: black;
+        margin: auto;
+        height: 700px;
+        padding: 50px;
+    }
+
+    .signUpLightCard {
+        background-color: lightblue;
+        border-radius: 20px;
+        margin: auto;
+        width: 55%;
+        height: 95%;
+        padding: 40px;
+    }
+
+    .signUpDarkCard {
+        background-color: #2D3748;
+        border-radius: 20px;
+        margin: auto;
+        width: 55%;
+        height: 95%;
+        padding: 40px;
+    }
+
+    .heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .heading>* {
+        margin: auto;
+    }
+
+    /*  .title {
+        margin-left: 220px;
+    }
+
+    .iconButton {
+        margin-left: 210px;
+    } */
+
+    .form {
+        margin: auto;
+        padding: 10px;
+        padding-top: 40px;
+    }
+
+    .input {
+        margin-top: 10px;
+    }
+
+    .checkbox {
+        margin-top: 30px;
+    }
+
+    .button {
+        margin-top: 50px;
+    }
+
+    .password {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .password > input{
+        margin-right: -40px;
+    }
+}

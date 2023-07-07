@@ -1,0 +1,205 @@
+@media all and (min-width : 1200px) {
+    .light {
+        color: black;
+        background-color: white;
+        margin: auto;
+        height: 700px;
+        padding-top: 50px;
+    }
+
+    .dark {
+        color: white;
+        background-color: black;
+        margin: auto;
+        height: 700px;
+        padding-top: 50px;
+    }
+
+    .lightcard {
+        border-radius: 20px;
+        background-color: lightblue;
+        width: 50%;
+        height: 75%;
+        margin: auto;
+        padding: 30px;
+        padding-top: 50px;
+    }
+
+    .darkcard {
+        border-radius: 20px;
+        background-color: #2D3748;
+        width: 50%;
+        height: 75%;
+        margin: auto;
+        padding: 30px;
+        padding-top: 50px;
+    }
+
+    .heading {
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .heading>* {
+        margin: auto;
+    }
+
+    .title {
+        padding-left: 240px;
+    }
+
+    .iconButton {
+        margin-left: 220px;
+    }
+
+    .label {
+        padding-top: 35px;
+    }
+
+    .button {
+        margin-top: 45px;
+    }
+    .foot{
+        margin-top: 10px;
+    }
+}
+
+@media all and (min-width : 950px) and (max-width : 1200px){
+    .light{
+        color: black;
+        background-color: white;
+        margin: auto;
+        height: 700px;
+        padding-top: 50px;
+    }
+    
+    .dark{
+        color: white;
+        background-color: black;
+        margin: auto;
+        height: 700px;
+        padding-top: 50px;
+    }
+    
+    .lightcard{
+        border-radius: 20px;
+        background-color: lightblue;
+        width: 50%;
+        height: 80%;
+        margin: auto;
+        padding: 30px;
+        padding-top: 50px; 
+    }
+    
+    .darkcard{
+        border-radius: 20px;
+        background-color: #2D3748;
+        width: 50%;
+        height: 80%;
+        margin: auto;
+        padding: 30px;
+        padding-top: 50px;
+    }
+    
+    .heading{
+        margin: auto;
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+    }
+    
+    .heading > *{
+        margin: auto;
+    }
+    
+    .title{
+        padding-left: 150px;
+    }
+    
+    .iconButton{
+        margin-left: 100px;
+    } 
+    
+    .label{
+        padding-top: 35px;
+    }
+    
+    .button{
+        margin-top: 75px;
+    }
+
+    .foot{
+        margin-top: 10px;
+    }
+}
+
+@media all and (min-width : 320px) and (max-width : 950px){
+    .light{
+        color: black;
+        background-color: white;
+        margin: auto;
+        height: 700px;
+        padding-top: 50px;
+    }
+    
+    .dark{
+        color: white;
+        background-color: black;
+        margin: auto;
+        height: 700px;
+        padding-top: 50px;
+    }
+    
+    .lightcard{
+        border-radius: 20px;
+        background-color: lightblue;
+        width: 50%;
+        height: 80%;
+        margin: auto;
+        padding: 30px;
+        padding-top: 50px; 
+    }
+    
+    .darkcard{
+        border-radius: 20px;
+        background-color: #2D3748;
+        width: 50%;
+        height: 80%;
+        margin: auto;
+        padding: 30px;
+        padding-top: 50px;
+    }
+    
+    .heading{
+        margin: auto;
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+        font-size: x-small;
+    }
+    
+    .heading > *{
+        margin: auto;
+    }
+     
+    .title{
+        padding-left: 50px;
+    }
+    
+    /*.iconButton{
+        margin-left: 0px;
+    } */ 
+    
+    .label{
+        padding-top: 35px;
+    }
+    
+    .button{
+        margin-top: 85px;
+    }
+
+    .foot{
+        margin-top: 10px;
+    }
+}
