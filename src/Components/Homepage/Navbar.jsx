@@ -32,7 +32,7 @@ function Navbar(props) {
 
 
     return (
-        <Box p={{ base: '0 1.5rem', md: '0 3rem', lg: '0 4.5rem' }} color={theme ? 'darkgray' : 'blackAlpha.800'} bg={theme ? '#101214' : 'white'} justify='space-between'>
+        <Box  top={0} p={{ base: '0 1.5rem', md: '0 3rem', lg: '0 4.5rem' }} color={theme ? 'darkgray' : 'blackAlpha.800'} bg={theme ? '#101214' : 'white'} justify='space-between'>
             <Flex p='1.2rem 0' align='center'>
             <Link to={'/'}>
                 <Flex>
@@ -52,10 +52,8 @@ function Navbar(props) {
                         className={activeIndex === 0 ? 'underline' : ''}
                         onClick={() => handleaClick(0)}
                         >Home</Text></NavLink>
-                        <NavLink to={'/services'}
-                            style={({ isActive }) => {
-                                return { color: isActive ? '#008cc9' : '' }
-                            }}
+                        <NavLink to={'/'}
+                           
                         ><Text fontWeight='600'>Services</Text></NavLink>
                         <NavLink to={'#'}
                             style={({ isActive }) => {
@@ -175,7 +173,7 @@ function Navbar(props) {
 
                                         <Popover>
                                                 <PopoverTrigger>
-                                                    <Button minW='8rem' bg={theme ? '#3DC6EF':'#008cc9'} _hover={{ bg: '#74d4f0' }} color='black' borderRadius='0.8rem' p='0.5rem 0rem'>Get Started</Button>
+                                                    <Button minW='8rem' bg={theme ? '#3DC6EF':'#008cc9'} _hover={{ bg: '#74d4f0' }} color='black' borderRadius='0.8rem' p='0.5rem 0rem'>Login/SignUp</Button>
                                                 </PopoverTrigger>
                                                 <PopoverContent w='10rem' border='none' borderRadius='1rem' bg={theme ? '#40494c' : 'gray.200'} >
                                                     <PopoverBody p='0'>

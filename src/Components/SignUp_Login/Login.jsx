@@ -94,7 +94,7 @@ const Login = () => {
     }
 
     useEffect(()=>{
-        axios.get(`http://localhost:8080/allUsers`)
+        axios.get(`https://adventour-allusers.onrender.com/allUsers`)
         .then((res)=>{
             console.log(res.data);
             setAllUsers(res.data);

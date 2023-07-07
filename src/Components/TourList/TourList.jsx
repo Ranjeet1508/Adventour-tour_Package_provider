@@ -22,6 +22,7 @@ import {
     AccordionIcon,
     Input,
     Checkbox,
+    Center,
     CheckboxGroup,
     Slider,
     SliderTrack,
@@ -79,23 +80,25 @@ const TourList = () => {
 
     return (
         <Box bg='black' w='100%' color='white' minH='400vh' display="flex" flexDirection="column">
+            <Center marginTop={"20px"} marginBottom={"20px"}>
             <Heading as='u' color='rgb(17,158,197)' >Deals and Discount</Heading>
+            </Center>
             <br />
             
             <Flex>
-            <AspectRatio w='400px' h='200' marginLeft='4%' border='5px solid aliceblue'>
+            <AspectRatio w='400px' h='200' marginLeft='5%' border='5px solid aliceblue'>
                 <video autoPlay loop muted>
                     <source src='https://cdn.pixabay.com/vimeo/145116966/mykonos-1282.mp4?width=480&hash=d199187a3446e5c6c13466f7b184681233dd8220' type='video/mp4' /> 
                 </video>
             </AspectRatio>
 
-            <AspectRatio w='400px' h='200' marginLeft='4%' border='5px solid aliceblue'>
+            <AspectRatio w='400px' h='200' marginLeft='5%' border='5px solid aliceblue'>
                 <video autoPlay loop muted>
                     <source src='https://cdn.pixabay.com/vimeo/454713939/high-way-48504.mp4?width=640&hash=3cb0bb065df70be4aa8718e08947088a26a29a4f' type='video/mp4' /> 
                 </video>
             </AspectRatio>
 
-            <AspectRatio w='400px' h='200' marginLeft='4%' border='5px solid aliceblue'>
+            <AspectRatio w='400px' h='200' marginLeft='5%' border='5px solid aliceblue'>
                 <video autoPlay loop muted>
                     <source src='https://cdn.pixabay.com/vimeo/409042530/ferris-36034.mp4?width=640&hash=358ce484282798d997e0be2d48b971d6d8a9638b' type='video/mp4' /> 
                 </video>
@@ -107,7 +110,7 @@ const TourList = () => {
                 
 
                 <Box w='40%' mt='2%'>
-                    <Button colorScheme='linkedin' marginLeft='-7.5%' mt='1%' size='lg' w='220px' position='absolute'>Sort & Filter</Button>
+                    <Button colorScheme='linkedin' marginLeft='11%' mt='1%' size='lg' w='220px' position='absolute'>Sort & Filter</Button>
                     
                     <Accordion mt='15%' w='40%' border='1px solid gray' allowMultiple position='relative' marginLeft='30%'>
                         <AccordionItem>
@@ -446,7 +449,7 @@ const TourList = () => {
 
                                 <CardFooter position='absolute' bottom='0' right='0'>
                                     <Button variant='solid' colorScheme='blue'>
-                                        <RouterLink to={`/tourdetail/:location/${elem.id}`}>View Details</RouterLink> 
+                                        <RouterLink to={`/tourdetail/${location}/${elem.id}`}>View Details</RouterLink> 
                                     </Button>
                                 </CardFooter>
                             </Stack>

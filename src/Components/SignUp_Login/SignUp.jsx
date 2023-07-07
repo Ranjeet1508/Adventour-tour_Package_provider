@@ -69,7 +69,7 @@ const SignUp = () => {
 
             console.log(user);
 
-            axios.post(`http://localhost:8080/allUsers`, user)
+            axios.post(`https://adventour-allusers.onrender.com/allUsers`, user)
                 .then((res) => {
                     console.log(res);
                     dispatch(handleAdd(user));

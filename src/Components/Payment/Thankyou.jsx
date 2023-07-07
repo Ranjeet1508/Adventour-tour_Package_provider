@@ -27,14 +27,14 @@ function Thankyou() {
 
     return (
         <Flex h={'100vh'} bg={'gray.200'} py={'60px'} 
-        // backgroundImage="url('https://previews.123rf.com/images/eigens/eigens1907/eigens190701253/127450654-light-gray-medium-turquoise-and-khaki-color-brushed-painting-artistic-artwork-for-use-as.jpg')"
+         backgroundImage="url('https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80')"
         backgroundSize="cover"
         backgroundPosition="center"
         justifyContent={'space-around'} align={'center'}
         >
-        <Flex display={'column'} my={'auto'} borderRadius={'15px'} px={'50px'} boxShadow={'md'} bg={'white'} h={'75vh'} w={'70%'} mx={'auto'} justifyContent={'space-around'} align={'center'}>
-            <Box  marginTop={'100px'} >
-                <Image src={success} w={'70px'} m={'auto'} />
+        <Flex  display={'column'} my={'auto'} borderRadius={'15px'} px={'50px'} boxShadow={'md'} bg={'#2f516c'} h={'75vh'} w={'70%'} mx={'auto'} justifyContent={'space-around'} align={'center'}>
+            <Box  marginTop={'150px'}  >
+                <Image   src={success} w={'70px'} m={'auto'} />
                 <Text textAlign={'Center'} fontSize={'40px'} fontWeight={'700'} fontFamily={'unset'} color={'green.500'}>Booking Confirmed !</Text>
                 <Text color={'gray.500'} textAlign={'Center'}>Thankyou for making the purchance
                     <br />

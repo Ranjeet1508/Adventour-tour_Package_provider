@@ -37,10 +37,11 @@ function Tourdetail() {
   };
   const dispatch=useDispatch()
   const ref = useRef(null)
-  // const {location}=useParams()
-  // const {id}=useParams()
-  const location="Asia"
-  const id=1
+  const {location}=useParams()
+  console.log(location);
+  const {id}=useParams()
+  // const location="Asia"
+  // const id=1
   const theme=useSelector(state=>state.theme);
   const storedata=useSelector(state=>state.detail)
   const { isOpen, onOpen, onClose } = useDisclosure();

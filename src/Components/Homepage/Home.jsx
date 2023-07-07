@@ -12,13 +12,13 @@ import Thankyou from '../Payment/Thankyou'
 function Home() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <TopDestination />
       <Categories />
       <OurExperiences />
       <Testimonials />
-      <Footer />
+      {/* <Footer /> */}
       {/* remove the below 2 components this is just for my testing */}
       {/* <Payment />
       <Thankyou /> */}
