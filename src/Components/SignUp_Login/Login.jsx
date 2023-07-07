@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import {
     FormControl,
     FormLabel,
@@ -7,7 +9,8 @@ import {
     Button,
     Input,
     Heading,
-    IconButton
+    IconButton,
+    useToast
 } from '@chakra-ui/react';
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import style from './Login.module.css';
@@ -19,6 +22,26 @@ const Login = () => {
     })
     const [err, setErr] = useState(false);
     const [theme, setTheme] = useState('light');
+    const navigate = useNavigate();
+    const toast = useToast()
+
+    const allUsers = useSelector((store)=>{
+        return store.allUsers
+    })
+    /* const allUsers = [
+        {
+            email : 'anannyasaikia1998@gmail.com',
+            password : 'password'
+        },
+        {
+            email : 'as@gmail.com',
+            password : 'as'
+        },
+        {
+            email : 'anygreen@email.com',
+            password : 'anygreen'
+        }
+    ] */
 
     const handleTheme = () => {
         if (theme === 'light') {
@@ -28,12 +51,40 @@ const Login = () => {
         }
     }
 
-    const handleSubmit = () => {
+    const isValidated = () => {
+        const filteredData = allUsers.filter((ele, i)=>{
+            return ele.email === user.email && ele.password === user.password
+        })
+        console.log(filteredData);
+        if(filteredData.length !== 0) return true;
+        else return false;
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(allUsers);
+
         if (user.email === "" || user.password === "") {
             setErr(true);
             return;
         }
-
+        if(isValidated()){
+            toast({
+                title: 'Login Successful.',
+                description: "You've successfully logged into your account.",
+                status: 'success',
+                duration: 3000,
+                isClosable: true,
+              })
+            navigate('/');
+        }else{
+            toast({
+                title: 'Login Failed.',
+                description: "Wrong Credentials.",
+                status: 'error',
+                duration: 3000,
+                isClosable: true,
+              })
+        }
     }
 
     return (
@@ -69,6 +120,10 @@ const Login = () => {
                             Submit
                         </Button>
                     </FormControl>
+
+                    <div>
+                        <p>Do not have an account?</p><Link to='/signup' style={{color : "blue"}}>Register here</Link>
+                    </div>
                 </form>
             </div>
         </div>
