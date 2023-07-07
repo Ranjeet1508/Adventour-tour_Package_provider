@@ -7,14 +7,67 @@ import { FaUserFriends } from 'react-icons/fa';
 import { GrFormAdd, GrFormSubtract, GrRadialSelected } from 'react-icons/gr';
 import Toggle from './Toogle';
 import { TfiHeadphoneAlt } from 'react-icons/tfi';
-// import Logo from '../Vivek/Logos/LogoPic.png';
+import Logo from './Images/logo.png';
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 function Payment() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const theme = useSelector(state => state.theme);
-  const storedata = useSelector(state => state.detail)
+  const theme = true
+  // const storedata = useSelector(state => state.detail)   //use this if i am  not there while merging
+  //and remove the below storedata object
+  const storedata = {
+    "id": 1,
+    "region": "Asia",
+    "category": "Explorer",
+    "title": "Glimpse Of Indochina In 15 Days - Vietnam / Cambodia / Thailand / Laos",
+    "reviews": 45,
+    "destinations": [
+      "Vietnam",
+      "Cambodia",
+      "Thailand",
+      "Laos"
+    ],
+    "age_range": "1 to 90",
+    "travel_style": [
+      "Family",
+      "Custom",
+      "Private",
+      "Group",
+      "Explorer"
+    ],
+    "tour_length": 15,
+    "price_per_day": 8988,
+    "str_price": 299609,
+    "act_price": 134824,
+    "save_price": 164785,
+    "addional_price": 43948,
+    "off": 55,
+    "main_image": "https://cdn.tourradar.com/s3/tour/1500x800/136848_62bd70bf2dc19.jpg",
+    "rating": 5,
+    "tour_id": 136848,
+    "group_size": 15,
+    "top_crousel_img": [
+      "https://cdn.tourradar.com/s3/tour/1500x800/136848_62bd70bf2dc19.jpg",
+      "https://cdn.tourradar.com/s3/tour/1500x800/136848_6b312b7a.jpg",
+      "https://cdn.tourradar.com/s3/tour/1500x800/136848_1f8e9977.jpg",
+      "https://cdn.tourradar.com/s3/tour/1500x800/136848_82b37e84.jpg"
+    ],
+    "places_see_img": [
+      "https://cdn.tourradar.com/s3/cities/520x406/7592_792610.jpg",
+      "https://cdn.tourradar.com/s3/cities/520x406/30189_fda1a8.jpg",
+      "https://cdn.tourradar.com/s3/cities/520x406/7628_1a1229.jpg",
+      "https://cdn.tourradar.com/s3/cities/520x406/11324_9c04eb.jpg"
+    ],
+    "places_see_name": [
+      "Hanoi",
+      "Halong Bay",
+      "Ho Chi Minh City",
+      "Bangkok"
+    ],
+    "map_img": "https://cdn.tourradar.com/s3/map/1171x320/136848_ea02.png"
+  }
+
   const [start, setstart] = useState('');
   const [end, setend] = useState('');
   const len = storedata?.destinations?.length
@@ -67,12 +120,12 @@ function Payment() {
 
   return (
     <Box minH={'100vh'} bg={theme ? '#101214' : 'gray.100'} color={theme ? 'white' : 'blackAlpha.800'}>
-      <Toggle />
+      {/* <Toggle /> */}
       {/* navbar-box */}
-      <Box bg={theme ? '#191b1d' : 'white'} py={'15px'}>
+      {/* <Box bg={theme ? '#191b1d' : 'white'} py={'15px'}>
         <HStack w={{ base: "95%", md: "95%", lg: '76%' }} m={'auto'} >
           <Flex alignItems={"center"}>
-            <Image  alt='logo' w={"70px"} px={"8px"} />
+            <Image src={Logo}  alt='logo' w={"70px"} px={"8px"} />
             <Text fontSize={"1.2rem"} fontWeight={"800"} >Adventour.</Text>
           </Flex>
           <Spacer />
@@ -83,7 +136,7 @@ function Payment() {
             <Box color={theme ? 'white' : 'blackAlpha.800'} colorScheme='none'>Book as Travel Agent</Box>
           </HStack>
         </HStack>
-      </Box>
+      </Box> */}
 
       {/* Midbox-start */}
       <Box w={{ base: "92%", md: "95%", lg: '76%' }} m={'auto'}>
@@ -99,7 +152,7 @@ function Payment() {
         <Flex justifyContent={'space-between'}>
           {/* left box */}
           <Box w={{ base: "100%", md: "100%", lg: '67%' }}>
-            <Box boxShadow={'md'} p={'20px'} bg={theme ? '#191b1d' : 'white'} borderRadius={'15px'}>
+            {/* <Box boxShadow={'md'} p={'20px'} bg={theme ? '#191b1d' : 'white'} borderRadius={'15px'}>
               <Text pb={'20px'} fontSize={'20px'} fontWeight={'600'}>Your adventure overview</Text>
               <Flex direction={{ base: "column", md: "row", lg: "row" }}>
                 <Box border={'1px solid gray'} w={{ base: "100%", md: "35%", lg: '35%' }} p={'20px'} borderRadius={{ base: '15px 15px 0 0', md: '15px 0 0 15px', lg: '15px 0 0 15px' }}>
@@ -114,7 +167,7 @@ function Payment() {
                   <Flex py={'5px'}><AiFillTag size={'22px'} /><Text px={'10px'}>Special deal. See details</Text></Flex>
                 </Box>
               </Flex>
-            </Box>
+            </Box> */}
             <Box my={'25px'} p={'20px'} borderRadius={'15px'} bg={theme ? '#191b1d' : 'white'} boxShadow={'md'}>
               <HStack>
                 <BsFill1SquareFill size={'30px'} />
@@ -364,7 +417,7 @@ function Payment() {
                   }else {
                     onOpen();
                     toast({
-                      description: "Your OTP is 5637",
+                      description: "Your OTP is 1234",
                       status: 'success',
                       position: 'top',
                       duration: 3000,
@@ -373,7 +426,7 @@ function Payment() {
                   }
 
                   
-                }} colorScheme='none' bg={'#008cc9'} py={'30px'} mt={'30px'}>Book Spaces</Button>
+                }} colorScheme='none' bg={'#008cc9'} py={'30px'} mt={'30px'}>Book Tour</Button>
                 <Modal isOpen={isOpen} >
                   <ModalOverlay />
                   <ModalContent w={'350px'} top={'22%'} py={'30px'}>
@@ -394,7 +447,7 @@ function Payment() {
                           <Text fontSize={'12px'} pt={'15px'} >Not received OTP, Click here to </Text>
                           <Text onClick={() => {
                             toast({
-                              description: "Your OTP is 5637",
+                              description: "Your OTP is 1234",
                               status: 'warning',
                               position: 'top',
                               duration: 3000,
@@ -409,7 +462,7 @@ function Payment() {
                     </ModalBody>
                     <Button colorScheme='blue' m={5} onClick={() => {
                       onClose();
-                      if (pin.first == 5 && pin.sec == 6 && pin.third == 3 && pin.fourth == 7) {
+                      if (pin.first == 1 && pin.sec == 2 && pin.third == 3 && pin.fourth == 4) {
                         navigate('/payment-successful')
                       } else {
                         toast({

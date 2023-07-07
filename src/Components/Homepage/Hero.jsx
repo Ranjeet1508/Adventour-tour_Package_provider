@@ -21,14 +21,16 @@ import { useNavigate } from 'react-router-dom'
 
 function Hero() {
 
-    const theme = false;
+    const theme = true;
     const [location, setlocation] = useState('Place');
     const [date, setdate] = useState('');
     const navigate = useNavigate();
     const toast = useToast()
 
+    
+
     const listfunc = () => {
-        if (location === 'Place' || date === ' ') {
+        if (location === 'Place' || date === '') {
             toast({
                 title: `Please select a location and a date`,
                 status: "error",

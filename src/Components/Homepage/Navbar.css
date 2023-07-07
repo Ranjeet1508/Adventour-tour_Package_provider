@@ -1,0 +1,52 @@
+#navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:sticky;
+    padding-bottom: 50px;
+    background-color: black;
+    border-bottom: 1px solid gray;
+
+    top:0;
+}
+#navbar>#navitems
+{
+    display: flex;
+    gap: 35px;;
+    align-items: center;
+
+   
+}
+a{
+    cursor: pointer;
+}
+
+.underline {
+    position: relative;
+    padding-bottom: 10px;
+   
+  }
+ 
+  .underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 35%;
+    width: 25%;
+    transition: width 0.10s ease-in-out;
+    border-radius: 25px;
+    border-bottom: 4px solid rgb(61,198,239);
+
+  }
+ 
+  
+  
+#logo
+{
+    display: flex;
+}
+#logo>img
+{
+    width: 100px;;
+}
