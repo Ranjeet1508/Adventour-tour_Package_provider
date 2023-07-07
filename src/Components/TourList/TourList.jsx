@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
 import axios from 'axios';
+import {Link as RouterLink} from 'react-router-dom';
 import {
     Box,
     Heading,
@@ -445,7 +446,7 @@ const TourList = () => {
 
                                 <CardFooter position='absolute' bottom='0' right='0'>
                                     <Button variant='solid' colorScheme='blue'>
-                                        View Details
+                                        <RouterLink to={`/tourdetail/:location/${elem.id}`}>View Details</RouterLink> 
                                     </Button>
                                 </CardFooter>
                             </Stack>
