@@ -79,9 +79,9 @@ const TourList = () => {
     }, [sortVal,value])
 
     return (
-        <Box bg='black' w='100%' color='white' minH='400vh' display="flex" flexDirection="column">
+        <Box bg='black' w='100%' color='white' minH='350vh' display="flex" flexDirection="column">
             <Center marginTop={"20px"} marginBottom={"20px"}>
-            <Heading as='u' color='rgb(17,158,197)' >Deals and Discount</Heading>
+            <Heading as='i' color='rgb(17,158,197)' >Deals and Discount</Heading>
             </Center>
             <br />
             
@@ -434,7 +434,7 @@ const TourList = () => {
                                         </Text>
                                         <Spacer />
                                         <Text py='2' as='b' position='absolute' right='2'>
-                                            Tour Length - {elem.tour_length}
+                                            Tour Length - {elem.tour_length} days
                                         </Text>
                                     </Flex>
                                     <hr />

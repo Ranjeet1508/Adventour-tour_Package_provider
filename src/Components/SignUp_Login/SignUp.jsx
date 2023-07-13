@@ -93,7 +93,7 @@ const SignUp = () => {
         } else if (password === '' || confirmPassword === '') {
             /*  setEqual(false); */
             toast({
-                title: `password cannot be empty string`,
+                title: `Password cannot be empty`,
                 status: 'error',
                 isClosable: true,
             })
