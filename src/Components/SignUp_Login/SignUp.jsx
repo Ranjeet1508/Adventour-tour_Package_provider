@@ -69,7 +69,7 @@ const SignUp = () => {
 
             console.log(user);
 
-            axios.post(`https://adventour-allusers.onrender.com/allUsers`, user)
+            axios.post(`https://real-erin-chameleon-hem.cyclic.app/user/signup`, user)
                 .then((res) => {
                     console.log(res);
                     dispatch(handleAdd(user));
