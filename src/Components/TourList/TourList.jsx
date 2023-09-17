@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import {useParams} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import axios from 'axios';
 import {Link as RouterLink} from 'react-router-dom';
+import { UseSelector } from 'react-redux';
 import {
     Box,
     Heading,
@@ -34,8 +35,8 @@ import {
 } from '@chakra-ui/react';
 
 
-
 const TourList = () => {
+
     const [tourList, settourList] = useState([]);
     const [sliderValue, setSliderValue] = useState(5)
     const {location} = useParams();
@@ -64,7 +65,12 @@ const TourList = () => {
     }
 
     const getTourList = () => {
-        axios.get(`https://adventourapi.onrender.com/${location}?_limit=${10}&_sort=${value}&_order=${sortVal}`)
+        const token = localStorage.getItem("token");
+        axios.get(`https://real-erin-chameleon-hem.cyclic.app/${location}?perpage=${10}&&sortBy=${value}&&order=${sortVal}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
             .then((res) => {
                 console.log(res.data)
                 settourList(res.data);
@@ -408,7 +414,7 @@ const TourList = () => {
                     right='5%'
                     p='4'
                 >
-                    {tourList.map((elem, ind) => {
+                    {tourList?.map((elem, ind) => {
                         return <Card
                             direction={{ base: 'column', sm: 'row' }}
                             overflow='hidden'
@@ -449,7 +455,7 @@ const TourList = () => {
 
                                 <CardFooter position='absolute' bottom='0' right='0'>
                                     <Button variant='solid' colorScheme='blue'>
-                                        <RouterLink to={`/tourdetail/${location}/${elem.id}`}>View Details</RouterLink> 
+                                        <RouterLink to={`/tourdetail/${location}/${elem._id}`}>View Details</RouterLink> 
                                     </Button>
                                 </CardFooter>
                             </Stack>

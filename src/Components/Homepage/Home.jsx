@@ -8,8 +8,11 @@ import Footer from './Footer'
 import Payment from '../Payment/Payment'
 import Navbar from './Navbar'
 import Thankyou from '../Payment/Thankyou'
+import { useSelector } from 'react-redux'
 
 function Home() {
+  const isAuth = useSelector((data) => data.isAuth);
+  console.log(isAuth);
   return (
     <div>
       {/* <Navbar /> */}

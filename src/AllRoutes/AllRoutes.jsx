@@ -7,6 +7,7 @@ import Login from '../Components/SignUp_Login/Login'
 import Signup from '../Components/SignUp_Login/SignUp'
 import TourList from '../Components/TourList/TourList'
 import TourDetails from '../Components/TourDetails/TourDetails'
+import PrivateRoute from './PrivateRoute'
 
 function AllRoutes() {
   return (
@@ -17,7 +18,7 @@ function AllRoutes() {
     <Route path='/tourdetail/:location/:id' element={<TourDetails/>}/>
     <Route path='/signup' element={<Signup/>}/>
     <Route path='/payment/:location/:id' element={<Payment/>}/>
-    <Route path='/tourlist/:location' element={<TourList/>}/>
+    <Route path='/tourlist/:location' element={<PrivateRoute><TourList/></PrivateRoute>}/>
     <Route path='/login' element={<Login/>}/>
     {/* <Route path='/services' element={<Services />} /> */}
     <Route path='/payment-successful' element={<Thankyou/>}/>

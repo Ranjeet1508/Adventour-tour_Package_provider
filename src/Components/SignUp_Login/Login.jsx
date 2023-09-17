@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 /* import { useSelector } from 'react-redux'; */
 import {
     FormControl,
@@ -17,8 +17,10 @@ import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import style from './Login.module.css';
 import axios from 'axios';
 import { handleSetUsers } from '../../Redux/SignUpRedux/signupAction';
+import { handleAuth, handleUser } from '../../Redux/action';
 
 const Login = () => {
+    const isAuth = useSelector((data) => data.isAuth);
     const [user, setUser] = useState({
         email: "",
         password: ""
@@ -31,23 +33,6 @@ const Login = () => {
     const toast = useToast();
     const dispatch = useDispatch();
 
-    /* const allUsers = useSelector((store)=>{
-        return store.allUsers
-    }) */
-    /* const allUsers = [
-        {
-            email : 'anannyasaikia1998@gmail.com',
-            password : 'password'
-        },
-        {
-            email : 'as@gmail.com',
-            password : 'as'
-        },
-        {
-            email : 'anygreen@email.com',
-            password : 'anygreen'
-        }
-    ] */
 
     const handleTheme = () => {
         if (theme === 'light') {
@@ -57,53 +42,68 @@ const Login = () => {
         }
     }
 
-    const isValidated = () => {
-        const filteredData = allUsers.filter((ele, i)=>{
-            return ele.email === user.email && ele.password === user.password
-        })
-        console.log(filteredData);
-        if(filteredData.length !== 0) return true;
-        else return false;
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(allUsers);
+ 
 
-        if (user.email === "" || user.password === "") {
-            setErr(true);
-            return;
-        }
-        if(isValidated()){
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await axios.post('https://real-erin-chameleon-hem.cyclic.app/user/login',
+            user
+          )
+          .then(function (response) {
+            console.log(response.data);
+            if(response.data.msg==="Login Successfull"){
+               
             toast({
                 title: 'Login Successful.',
                 description: "You've successfully logged into your account.",
                 status: 'success',
                 duration: 3000,
                 isClosable: true,
-              })
-            navigate('/');
-        }else{
+            })
+            localStorage.setItem("token", response.data.token);
+            let name = response.data.name;
+            dispatch(handleAuth(!isAuth))
+            dispatch(handleUser(name));
+            console.log(isAuth);
+            setTimeout(() => {
+                navigate('/');
+            },2000)
+            
+        }
+        else{
+            toast({
+                title: 'Login Failed.',
+                description: "Wrong Credentials or user doesn't exist.",
+                status: 'error',
+                duration: 3000,
+                isClosable: true,
+            })
+        }
+          })
+          .catch(function (error) {
+            console.log(error);
             toast({
                 title: 'Login Failed.',
                 description: "Wrong Credentials.",
                 status: 'error',
                 duration: 3000,
                 isClosable: true,
-              })
-        }
+            })
+        });
     }
+    
 
-    useEffect(()=>{
-        axios.get(`https://adventour-allusers.onrender.com/allUsers`)
-        .then((res)=>{
-            console.log(res.data);
-            setAllUsers(res.data);
-            dispatch(handleSetUsers(res.data));
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
-    }, [dispatch, allUsers])
+    // useEffect(()=>{
+    //     axios.get(`https://localhost:8080/user/login`)
+    //     .then((res)=>{
+    //         console.log(res.data);
+    //         setAllUsers(res.data);
+    //         dispatch(handleSetUsers(res.data));
+    //     })
+    //     .catch((err)=>{
+    //         console.log(err);
+    //     })
+    // }, [])
 
     return (
         <div className={theme === 'light' ? style.light : style.dark}>
@@ -122,7 +122,7 @@ const Login = () => {
                         <FormLabel className={style.label}><Heading size='md'>Email address</Heading></FormLabel>
                         <Input type='email' variant='flushed' placeholder="example@example.com" onChange={(e) => {
                             setUser({ ...user, email: e.target.value })
-                        }} required/>
+                        }} required />
                         {
                             err ? <FormErrorMessage>Email is required.</FormErrorMessage>
                                 : ""
@@ -132,7 +132,7 @@ const Login = () => {
                         <FormLabel className={style.label}><Heading size='md'>Password</Heading></FormLabel>
                         <Input type='password' variant='flushed' placeholder='********' onChange={(e) => {
                             setUser({ ...user, password: e.target.value })
-                        }} required/>
+                        }} required />
 
                         <Button className={style.button} type="submit" colorScheme='blue'>
                             Submit
@@ -140,7 +140,7 @@ const Login = () => {
                     </FormControl>
 
                     <div className={style.foot}>
-                        <p>Do not have an account?</p><Link to='/signup' style={{color : theme === 'light' ? "blue" : "lightblue"}}>Register here</Link>
+                        <p>Do not have an account?</p><Link to='/signup' style={{ color: theme === 'light' ? "blue" : "lightblue" }}>Register here</Link>
                     </div>
                 </form>
             </div>

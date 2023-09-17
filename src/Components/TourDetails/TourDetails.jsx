@@ -35,13 +35,14 @@ function Tourdetail() {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+
   const dispatch=useDispatch()
   const ref = useRef(null)
   const {location}=useParams()
   console.log(location);
-  const {id}=useParams()
-  // const location="Asia"
-  // const id=1
+  const {id}=useParams();
+
+
   const theme=useSelector(state=>state.theme);
   const storedata=useSelector(state=>state.detail)
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -53,12 +54,26 @@ function Tourdetail() {
     des:''
   })
 
-  useEffect(() => {
-    axios.get(`https://adventourapi.onrender.com/${location}/${id}`)
-    .then((res)=>{dispatch({type:'DETAIL', payload:res.data})})
+
+  const getDatafromAPI = async() => {
+    const token = localStorage.getItem("token")
+    await axios.get(`https://real-erin-chameleon-hem.cyclic.app/${location}/${id}`,{
+      headers:{
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then((res)=>{
+      dispatch({type:'DETAIL', payload:res.data})
+      console.log(res.data);
+    })
     window.scrollTo({
       top: 0, 
     });
+  }
+
+
+  useEffect(() => {
+    getDatafromAPI()
   }, [])
 
  

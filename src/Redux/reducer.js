@@ -1,5 +1,8 @@
+import { ISAUTH, USER } from "./actiontype"
+
 const initialState={
     isAuth:false,
+    isUser:"",
     isLoading:false,
     data:[],
     detail:{},
@@ -10,6 +13,10 @@ const initialState={
 
 const reducer=(state=initialState, action)=>{
     switch(action.type){
+        case ISAUTH: 
+            return {...state, isAuth:action.payload}
+        case USER: 
+            return {...state, isUser:action.payload}
         case 'LIST':
             return {...state, data:action.payload}
         case 'LIMIT':

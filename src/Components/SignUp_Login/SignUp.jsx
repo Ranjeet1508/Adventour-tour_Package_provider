@@ -29,19 +29,6 @@ const SignUp = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
-    /* const [user, setUser] = useState({
-        fullName: "",
-        email: "",
-        password: ""
-    }) */
-
-    /* const [pw, setPw] = useState({
-        p1: "",
-        p2: ""
-    }) */
-
-    /* const [isEqual, setEqual] = useState(false); */
-
     const toast = useToast();
     const navigate = useNavigate();
 
@@ -57,7 +44,7 @@ const SignUp = () => {
         setVisibility(!visiblility);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (password === confirmPassword && password !== '' && confirmPassword !== '') {
 
@@ -67,9 +54,7 @@ const SignUp = () => {
                 password: password
             }
 
-            console.log(user);
-
-            axios.post(`https://real-erin-chameleon-hem.cyclic.app/user/signup`, user)
+            await axios.post(`https://real-erin-chameleon-hem.cyclic.app/user/signup`, user)
                 .then((res) => {
                     console.log(res);
                     dispatch(handleAdd(user));
@@ -77,7 +62,7 @@ const SignUp = () => {
                 .catch((err) => {
                     console.log(err);
                 })
-
+                
             toast({
                 position: 'bottom-left',
                 render: () => (
@@ -165,8 +150,6 @@ const SignUp = () => {
                     </Button>
                 </form>
             </div>
-
-
         </div>
     )
 }

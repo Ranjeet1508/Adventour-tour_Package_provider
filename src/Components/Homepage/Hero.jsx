@@ -80,7 +80,7 @@ function Hero() {
                   <MenuList bg={theme ? '#191b1d' : 'white'} border='none' _hover={theme ? { bg: "#191b1d" } : { bg: "white" }}>
                     <MenuItem bg={theme ? '#191b1d' : 'white'} onClick={() => { setlocation('Asia') }} color={theme ?  'white' : '#191b1d'}>Asia</MenuItem>
                     <MenuItem bg={theme ? '#191b1d' : 'white'} onClick={() => { setlocation('Europe') }}  color={theme ?  'white' : '#191b1d'}>Europe</MenuItem>
-                    <MenuItem bg={theme ? '#191b1d' : 'white'} onClick={() => { setlocation('Latin_America') }}  color={theme ?  'white' : '#191b1d'}>Latin America</MenuItem>
+                    <MenuItem bg={theme ? '#191b1d' : 'white'} onClick={() => { setlocation('LatinAmerica') }}  color={theme ?  'white' : '#191b1d'}>Latin America</MenuItem>
                     <MenuItem bg={theme ? '#191b1d' : 'white'} onClick={() => { setlocation('Africa') }}  color={theme ?  'white' : '#191b1d'}>Africa</MenuItem>
                   </MenuList>
                 </Menu>
