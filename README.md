@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+Ecommerce Tourism Website -> Adventour
+Welcome to our Ecommerce Tourism Website project! This web application is designed to provide users with the ability to book tours from around the world. Whether it's exploring historical landmarks, enjoying breathtaking landscapes, or experiencing local cultures, our platform aims to make travel accessible and enjoyable.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Table of Contents
+Features
+Project Contribution
+Getting Started
+Installation
+Usage
+Authentication
+Team Members
+Technologies Used
+Acknowledgments
+Features
 
-## Available Scripts
+Tour List Page: Browse and explore a wide range of tours from different destinations.
+Booking System: Easily book tours and manage your bookings.
+User Authentication: Securely authenticate users to ensure a personalized experience.
+Responsive Design: Enjoy a seamless experience on various devices.
+Project Contribution
+As part of a collaborative team effort, my contributions to the project include:
 
-In the project directory, you can run:
+Tour List Page:
 
-### `npm start`
+Designed and implemented the Tour List Page to showcase available tours.
+Integrated features for easy navigation and filtering of tour options.
+Authentication:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Implemented the authentication system to ensure secure access to the website.
+Handled user authentication processes, including login and registration.
+Getting Started
+To get started with the project, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+npm start
+Access the website at (https://adventour-iota.vercel.app/) in your web browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Authentication
+To access certain features and book tours, you need to authenticate:
 
-### `npm run build`
+Login:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Use your registered email and password.
+Registration:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+If you don't have an account, you can register to create one.
+Team Members
+Amit ballal
+Saurabh Wakde
+Ananya shaikia
+Ranjeet
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Technologies Used
+Frontend: React.js
+Backend: Node.js, Express
+Database: MongoDB
+Authentication: JWT
+Styling: CSS, chakra UI
+Acknowledgments
+We would like to express our gratitude to everyone who contributed to the development of this project.
